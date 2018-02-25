@@ -1,0 +1,59 @@
+/*
+Theme Name: retrospec
+Description: IE7 specific style.
+*/
+
+.screen-reader-text {
+	clip: rect(1px 1px 1px 1px);
+}
+
+.secondary-toggle {
+	color: #333;
+	font-size: 16px;
+	line-height: 60px;
+	width: auto;
+}
+
+.pagination .prev,
+.pagination .next {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 64px;
+	padding: 0 19px;
+	width: auto;
+}
+
+.image-navigation,
+.comment-navigation {
+	width: 662px;
+}
+
+.post-navigation {
+	text-align: left;
+}
+
+.site-main {
+	text-align: center;
+}
+
+.hentry {
+	margin-bottom: 7.6923%;
+	text-align: left;
+	width: 808px;
+}
+
+.page-header {
+	margin-bottom: 7.6923%;
+	text-align: left;
+}
+
+.comments-area {
+	text-align: left;
+}
+
+.comment-list,
+.comment-navigation {
+	margin-bottom: 1.6471em;
+}
+
+

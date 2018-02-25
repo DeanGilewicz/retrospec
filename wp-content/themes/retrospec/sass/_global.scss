@@ -1,0 +1,108 @@
+body {
+	-webkit-font-smoothing: antialiased;
+	height: 100%;
+	// font-family: $font;
+	font-size: $base_font_size;
+	line-height: 1.6;
+	background-color: $grey_light;
+	color: $text;
+
+	@media (min-width: $medium) {
+		font-size: $base_font_size*1.2;
+	}
+}
+
+ol,
+ul,
+li,
+a,
+span {
+	font-size: $base_font_size;
+
+	@media (min-width: $medium) {
+		font-size: $base_font_size*1.1;
+	}
+}
+
+p {
+	font-size: $base_font_size;
+
+	@media (min-width: $medium) {
+		font-size: $base_font_size*1.1;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	// font-family: $font;
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+	color: $link;
+	cursor: pointer;
+	outline: none;
+	text-decoration: none;
+
+	&:active,
+	&:hover {
+		color: lighten($link, 10%);
+	}
+
+}
+
+img {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+select,
+textarea {
+	// font-family: $font;
+}
+
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.button {
+	text-decoration: none;
+	display: inline-block;
+	margin: $base_size 0;
+	padding: $base_size $base_size*1.2;
+	border: 1px solid $white;
+	text-transform: uppercase;
+	font-size: $base_font_size*0.9;
+	text-align: center;
+	
+	cursor: pointer;
+	transition: background-color 0.4s ease;
+
+	@media (min-width: $medium) {
+		
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $black;
+		color: $white;
+	}
+}
+
+
+
