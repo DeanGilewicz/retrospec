@@ -37,31 +37,42 @@
 		
 				<!-- <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'retrospec' ); ?></a> -->
 				
-				<div class="global__menu">
+				<div class="global__header">
 
-					<nav>
+					<div class="container__top__banner">
 
-						<!-- <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<div class="container_search_input">
-								<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'retrospec' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'retrospec' ); ?>" />
-								<button type="submit" class="search-submit button">
-									Go
-								</button>
-							</div>
-						</form> -->
+						<div class="social">
+							<img src="http://via.placeholder.com/40x40?text=F" alt="facebook logo" class="social__icon" />
+							<img src="http://via.placeholder.com/40x40?text=I" alt="instagram logo" class="social__icon" />
+							<img src="http://via.placeholder.com/40x40?text=T" alt="twitter logo" class="social__icon" />
+						</div>
+
+						<form role="search" method="get" class="search__form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<input type="search" class="form__input" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'retrospec' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'retrospec' ); ?>" />
+							<input type="submit" class="form__submit" value="S" />
+						</form>
+
+					</div>
+
+					<div class="logo__main">
+						<a href="/">
+							<img src="http://via.placeholder.com/350x150?text=logo" alt="retrospec logo" />
+						</a>
+					</div>
+
+
+
+					<nav class="nav__main">
 
 						<ul>
 							<li class="<?php if( is_home() ) { echo 'current-cat'; } ?>">
 				                <a href="/">home</a>
 				            </li>
-							<li class="<?php if( is_page('about-me') ) { echo 'current-cat'; } ?>">
-				                <a href="/about-me" class="">about me</a>
+							<li class="<?php if( is_page('about-retrospec') ) { echo 'current-cat'; } ?>">
+				                <a href="/about-retrospec" class="">about</a>
 				            </li>
 				            <li class="<?php if( is_page('featured-fridays') ) { echo 'current-cat'; } ?>">
 				                <a href="/featured-fridays" class="">featured fridays</a>
-				            </li>
-				            <li class="<?php if( is_page('events') ) { echo 'current-cat'; } ?>">
-				                <a href="/events" class="">events</a>
 				            </li>
 				            <li class="<?php if( is_page('events') ) { echo 'current-cat'; } ?>">
 				                <a href="/events" class="">events</a>

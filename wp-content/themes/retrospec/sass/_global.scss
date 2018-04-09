@@ -16,15 +16,8 @@ ol,
 ul,
 li,
 a,
+p,
 span {
-	font-size: $base_font_size;
-
-	@media (min-width: $medium) {
-		font-size: $base_font_size*1.1;
-	}
-}
-
-p {
 	font-size: $base_font_size;
 
 	@media (min-width: $medium) {
@@ -57,6 +50,7 @@ a {
 }
 
 img {
+	max-width: 100%;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-tap-highlight-color: transparent;
 }
@@ -79,16 +73,26 @@ textarea {
 	clear: both;
 }
 
+
+/* layout */
+
+.site__wrapper {
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+}
+
+
+/* components */
+
 .button {
 	text-decoration: none;
 	display: inline-block;
-	margin: $base_size 0;
-	padding: $base_size $base_size*1.2;
+	margin: $spacing 0;
+	padding: $spacing $spacing*1.2;
 	border: 1px solid $white;
 	text-transform: uppercase;
 	font-size: $base_font_size*0.9;
 	text-align: center;
-	
 	cursor: pointer;
 	transition: background-color 0.4s ease;
 
