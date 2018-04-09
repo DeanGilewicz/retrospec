@@ -60,11 +60,12 @@
 						</a>
 					</div>
 
-
-
 					<nav class="nav__main">
-
-						<ul>
+						<ul class="nav__mobile">
+							<li class="nav__label">Menu</li>
+							<li class="nav__trigger">Go</li>
+						</ul>
+						<ul class="nav__items">
 							<li class="<?php if( is_home() ) { echo 'current-cat'; } ?>">
 				                <a href="/">home</a>
 				            </li>
@@ -80,6 +81,7 @@
 				            <li class="<?php if( is_page('shop') ) { echo 'current-cat'; } ?>">
 				                <a href="/shop" class="">shop</a>
 				            </li>
+				            
 							<?php 
 								// wp_list_categories( array(
 								// 	'orderby' => 'name',

@@ -3,7 +3,16 @@ const domReady = callback => {
     if( document.readyState === "interactive" || document.readyState === "complete" ) { callback(); } else { document.addEventListener("DOMContentLoaded", callback); }
 };
 
-domReady(() => {
+domReady( () => {
    	"use strict";
-	console.log('ready to go');
+	
+	const navTrigger = document.querySelector('.nav__trigger');
+	const navItems = document.querySelector('.nav__items');
+
+	navTrigger.addEventListener('click', () => {
+		navItems.classList.toggle('active');
+	});
+
+
+
 });
