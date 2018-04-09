@@ -13,6 +13,15 @@ domReady( () => {
 		navItems.classList.toggle('active');
 	});
 
+	// jQuery
 
+	// homepage only
+
+	if( $('body').hasClass('home') ) {
+		$(".owl-carousel").owlCarousel({
+			items: 1,
+			nav: true
+		});
+	}
 
 });

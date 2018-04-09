@@ -16,6 +16,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Rubik:900" />
+		<?php if( is_home() ): ?>
+			<link rel="stylesheet" type="text/css" href="<?= get_stylesheet_directory_uri(); ?>/dist/css/vendor/owl.carousel.min.css" />
+			<link rel="stylesheet" type="text/css" href="<?= get_stylesheet_directory_uri(); ?>/dist/css/vendor/owl.theme.default.min.css" />
+		<?php endif; ?>
 		<link rel="stylesheet" type="text/css" href="<?= get_stylesheet_directory_uri(); ?>/dist/css/main.min.css" />
 		<!-- <link rel="profile" href="http://gmpg.org/xfn/11"> -->
 		<!-- <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"> -->

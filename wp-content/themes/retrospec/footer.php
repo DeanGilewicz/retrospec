@@ -13,6 +13,9 @@
 
 			<footer id="colophon" class="site-footer" role="contentinfo">
 
+				<div class="footer__copyright">
+					<p>&copy; Retrospec</p>
+				</div>
 				<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 					<aside class="container_sidebar_two">
 						<div class="widget_area">
@@ -66,6 +69,11 @@
 				<!--</div>--><!-- .site-info -->
 
 			</footer><!-- .site-footer -->
+
+			<?php if( is_home() ): ?>
+				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/jquerySlim.min.js"></script>
+				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/owl.carousel.min.js"></script>
+			<?php endif; ?>
 
 			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/main.min.js"></script>
 

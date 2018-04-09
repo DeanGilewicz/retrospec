@@ -13,7 +13,7 @@
 	$argsAllPosts = array(
 		'post_type' => array('post'),
 		'category__not_in' => '344',
-		'tag__not_in' => '10',
+		'tag__not_in' => '2',
 		'posts_per_page' => '3',
 		'orderby' => 'date'
 	);
@@ -29,54 +29,27 @@
 
 	<?php $postNum = 0; ?>
 
-	<div class="slider">
+	<div class="owl-carousel">
 
-		<div class="slides">
-		
-			<?php while ( $the_query_slider->have_posts() ) : $the_query_slider->the_post(); ?>
-				
-				<?php 
-					$postNum++;
-					$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
-					$url = $thumb['0'];
-				?>
+		<?php while ( $the_query_slider->have_posts() ) : $the_query_slider->the_post(); ?>
 
-				<div class="slide-<?= $postNum; ?> <?= ($postNum == 1) ? 'active' : ''; ?>" style="background-image: url('<?= $url; ?>');">
-					<div class="mask"></div>
-					<div class="row">
-						<div class="small-12 columns">
-							<div class="content-of-slide">
+			<?php 
+				$postNum++;
+				$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+				$url = $thumb['0'];
+			?>
 
-								<h2><?php the_title(); ?></h2>
-								<?php the_excerpt(); ?>
-								<a class="button mobile-slider" href="<?php the_permalink(); ?>">go</a>
+			<div class="slide-<?= $postNum; ?> <?= ($postNum == 1) ? 'active' : ''; ?>" style="background-image: url('http://via.placeholder.com/350x150?text=logo');">
 
-							</div>
-						</div>
-					</div>
+				<div>
+					<h2><?php the_title(); ?></h2>
+					<?php the_excerpt(); ?>
+					<a class="button mobile-slider" href="<?php the_permalink(); ?>">go</a>
 				</div>
 
-			<?php endwhile; ?>
-
-		</div>
-
-		<div class="progress-of-slides">
-			<div class="row">
-				<div class="small-12 columns">
-
-				<?php $postNum = 0; ?>
-
-				<?php while ( $the_query_slider->have_posts() ) : $the_query_slider->the_post(); ?>
-
-					<?php $postNum++; ?>
-
-					<div class="progress-btn <?php echo ($postNum == 1) ? 'active' : ''; ?>"><?php the_title(); ?></div>
-
-				<?php endwhile; ?>
-
-				</div>
 			</div>
-		</div>
+
+		<?php endwhile; ?>
 
 	</div>
 
@@ -84,28 +57,7 @@
 
 <?php else : ?>
 
-	<div class="slider">
-
-		<div class="slides">
-
-			<div class="slide- active" style="background-color: rgba(0,0,0,0.7);">
-				<div class="mask"></div>
-				<div class="row">
-					<div class="small-12 columns">
-						<div class="content-of-slide">
-
-							<h2>no posts to display</h2>
-							<p>this is the excerpt text</p>
-							<a class="button mobile-slider" href="/">go</a>
-
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
+	no featured posts here!
 
 <? endif; ?>
 
