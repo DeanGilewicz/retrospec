@@ -6,6 +6,8 @@
 .container__top__banner {
 	display: flex;
     justify-content: space-between;
+    padding: $spacing $spacing*1.5;
+	background-color: $black;
 
     @media screen and (min-width: $medium) {
     	justify-content: flex-end;
@@ -39,6 +41,10 @@
 	padding: 0;
 	height: 30px;
 
+	@media screen and (min-width: $medium) {
+		height: 40px;
+	}
+
 	.form__input {
 		width: 140px;
 		height: 100%;
@@ -50,14 +56,18 @@
 		padding: $spacing*0.5;
 		background-color: $black;
 		color: $white;
+
+		@media screen and (min-width: $medium) {
+			width: 40px;
+		}
+
 	}
 
 }
 
 .nav__main {
 	// position: relative;
-	padding-top: $spacing;
-    padding-bottom: $spacing;
+	padding: $spacing $spacing*1.5;
     border-top: 1px solid $black;
     border-bottom: 1px solid $black;
 
@@ -69,12 +79,18 @@
 		justify-content: space-between;
 	}
 
+	.nav__mobile {
+		@media screen and (min-width: $medium) {
+			display: none;
+		}
+	}
+
 	.nav__items {
 		flex-direction: column;
 		// position: absolute;
 		// top: 46px;
-		left: 0;
-		right: 0;
+		// left: 0;
+		// right: 0;
 		// width: 100%;
 		max-height: 0;
 		overflow: hidden;
@@ -87,6 +103,13 @@
 	    	transition: max-height 0.4s ease-in-out;
     	}
 
+    	@media screen and (min-width: $medium) {
+			flex-direction: row;
+			max-height: 100%;
+			overflow: visible;
+			background-color: transparent;
+		}
+
     	li {
     		padding: $spacing $spacing*0.5;
     		color: $white;
@@ -96,6 +119,10 @@
     			border-bottom: none;
     		}
 
+	    	@media screen and (min-width: $medium) {
+				border-bottom: none;
+			}
+
     	}
 
 	}
@@ -103,6 +130,7 @@
 }
 
 .logo__main {
+	padding: $spacing $spacing*1.5;
 	text-align: center;
 
 	a {
@@ -110,7 +138,8 @@
 	}
 
 	img {
-		max-width: 300px;
+    	width: 100%;
+	    max-width: 300px;
 	}
 
 }
