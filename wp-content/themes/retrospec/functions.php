@@ -39,7 +39,7 @@ if ( ! function_exists( 'retrospec_setup' ) ) :
 			// add_theme_support( 'post-thumbnails', array( 'post', 'test', 'portfolio' ) ); 
 
 		// Custom post types - include in theme
-		// include('post-types/post-types.php');
+		include('post-types/post-types.php');
 
 		// Custom taxonomies - include in theme
 		// include('taxonomies/taxonomies.php');

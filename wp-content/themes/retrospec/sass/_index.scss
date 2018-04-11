@@ -1,4 +1,16 @@
 body.home {
 
+	.owl-carousel {
+
+		[class*="slide"] {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;
+		}
+
+		
+
+	}
+
 	
 }

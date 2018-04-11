@@ -9,16 +9,17 @@ domReady( () => {
 	const navTrigger = document.querySelector('.nav__trigger');
 	const navItems = document.querySelector('.nav__items');
 
-	navTrigger.addEventListener('click', () => {
-		navItems.classList.toggle('active');
-	});
-
-	// jQuery
+	if( navTrigger ) {
+		navTrigger.addEventListener('click', () => {
+			navItems.classList.toggle('active');
+		});
+	}
 
 	// homepage only
 
-	if( $('body').hasClass('home') ) {
-		$(".owl-carousel").owlCarousel({
+	if( document.body.classList.contains('home') ) {
+    	// JQuery available
+    	$(".owl-carousel").owlCarousel({
 			items: 1,
 			nav: true
 		});
