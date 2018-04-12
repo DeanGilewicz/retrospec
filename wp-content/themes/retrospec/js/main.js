@@ -19,9 +19,19 @@ domReady( () => {
 
 	if( document.body.classList.contains('home') ) {
     	// JQuery available
-    	$(".owl-carousel").owlCarousel({
+    	$("#js-owl-carousel").owlCarousel({
 			items: 1,
 			nav: true
+		});
+	}
+
+	if( document.body.classList.contains('single-feature_friday') ) {
+		// JQuery available
+    	$("#js-owl-carousel-ff").owlCarousel({
+			items: 4,
+			nav: true,
+			lazyLoad: true,
+			// loop: true
 		});
 	}
 

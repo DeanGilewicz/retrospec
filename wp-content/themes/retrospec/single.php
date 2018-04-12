@@ -31,7 +31,12 @@
 				// get_template_part( 'content', get_post_format() );
 
 				// override and get custom single content
-				get_template_part( 'content', 'single' );
+
+				if( get_post_type() === 'feature_friday' ) {
+					get_template_part( 'content', 'feature-friday' );
+				} else {
+					get_template_part( 'content', 'single' );
+				}
 
 				// If comments are open or we have at least one comment, load up the comment template.
 				if ( comments_open() || get_comments_number() ) :

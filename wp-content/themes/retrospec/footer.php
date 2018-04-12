@@ -70,7 +70,7 @@
 
 			</footer><!-- .site-footer -->
 
-			<?php if( is_home() ): ?>
+			<?php if( is_home() || get_post_type() === 'feature_friday' ): ?>
 				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/jquerySlim.min.js"></script>
 				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/owl.carousel.min.js"></script>
 			<?php endif; ?>

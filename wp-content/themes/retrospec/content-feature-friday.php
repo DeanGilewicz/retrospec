@@ -77,7 +77,8 @@
 				// 	__( 'Continue reading %s', 'retrospec' ),
 				// 	the_title( '<span class="screen-reader-text">', '</span>', false )
 				// ) );
-				the_excerpt();
+				// the_excerpt();
+				the_content();
 
 				// wp_link_pages( array(
 				// 	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'retrospec' ) . '</span>',
@@ -89,7 +90,35 @@
 				// ) );
 			?>
 
-			<a href="<?php the_permalink(); ?>" class="button">Read more</a>
+			<!-- <a href="<?php the_permalink(); ?>" class="button">Read more</a> -->
+
+			<?php if( have_rows('images') ): ?>
+
+				<?php $imageNum = 0; ?>
+
+				<div class="owl-carousel" id="js-owl-carousel-ff">
+
+					<?php while( have_rows('images') ): the_row(); 
+						// variables
+						$imageNum++;
+						$image = get_sub_field('image');
+					?>
+
+						<?php if( $imageNum <= 4 ) : ?>
+							<div class="slide-<?= $imageNum; ?>">
+								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt'] ?>" />
+							</div>
+						<?php else: ?>
+							<div class="slide-<?= $imageNum; ?>">
+								<img class="owl-lazy" data-src="<?php echo $image['sizes']['thumbnail']; ?>" data-src-retina="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+							</div>
+						<?php endif; ?>
+
+					<?php endwhile; ?>
+
+				</div>
+
+			<?php endif; ?>			
 
 		</div><!-- .entry-content -->
 

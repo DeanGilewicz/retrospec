@@ -29,7 +29,7 @@
 
 	<?php $postNum = 0; ?>
 
-	<div class="owl-carousel">
+	<div class="owl-carousel" id="js-owl-carousel">
 
 		<?php while ( $the_query_slider->have_posts() ) : $the_query_slider->the_post(); ?>
 
