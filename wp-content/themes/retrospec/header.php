@@ -74,15 +74,15 @@
 						<li class="<?php if( is_page('about-retrospec') ) { echo 'current-cat'; } ?>">
 			                <a href="/about-retrospec" class="">about</a>
 			            </li>
-			            <li class="<?php if( is_page('featured-fridays') ) { echo 'current-cat'; } ?>">
-			                <a href="/featured-fridays" class="">featured fridays</a>
+			            <li class="<?php if( is_page('feature-fridays') ) { echo 'current-cat'; } ?>">
+			                <a href="/feature-fridays" class="">feature fridays</a>
 			            </li>
 			            <li class="<?php if( is_page('events') ) { echo 'current-cat'; } ?>">
 			                <a href="/events" class="">events</a>
 			            </li>
-			            <li class="<?php if( is_page('shop') ) { echo 'current-cat'; } ?>">
+			            <!-- <li class="<?php if( is_page('shop') ) { echo 'current-cat'; } ?>">
 			                <a href="/shop" class="">shop</a>
-			            </li>
+			            </li> -->
 			            
 						<?php 
 							// wp_list_categories( array(
