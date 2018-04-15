@@ -21,7 +21,8 @@ domReady( () => {
     	// JQuery available
     	$("#js-owl-carousel").owlCarousel({
 			items: 1,
-			nav: true
+			nav: true,
+			navText: ['<span class="carousel__prev">&#x2039;</span>', '<span class="carousel__next">&#x203A;</span>']
 		});
 	}
 

@@ -14,7 +14,7 @@
 		'post_type' => array('post'),
 		'category__not_in' => '344',
 		'tag__not_in' => '2',
-		'posts_per_page' => '3',
+		'posts_per_page' => '6',
 		'orderby' => 'date'
 	);
 	$the_query_all_posts = new WP_Query( $argsAllPosts );
@@ -39,12 +39,12 @@
 				$url = $thumb['0'];
 			?>
 
-			<div class="slide-<?= $postNum; ?> <?= ($postNum == 1) ? 'active' : ''; ?>" style="background-image: url('http://via.placeholder.com/350x150?text=logo');">
+			<div class="slide-<?= $postNum; ?> <?= ($postNum == 1) ? 'active' : ''; ?>" style="background-image: url('http://via.placeholder.com/350x150?text=bgImg');">
 
-				<div>
+				<div class="slider__content">
 					<h2><?php the_title(); ?></h2>
 					<?php the_excerpt(); ?>
-					<a class="button mobile-slider" href="<?php the_permalink(); ?>">go</a>
+					<a class="button" href="<?php the_permalink(); ?>">See It</a>
 				</div>
 
 			</div>
@@ -57,7 +57,16 @@
 
 <?php else : ?>
 
-	no featured posts here!
+	<!-- DEFAULT RETROSPEC -->
+	<div class="slide-<?= $postNum; ?> <?= ($postNum == 1) ? 'active' : ''; ?>" style="background-image: url('http://via.placeholder.com/350x150?text=logo');">
+
+		<div>
+			<h2><?php the_title(); ?></h2>
+			<?php the_excerpt(); ?>
+			<a class="button" href="<?php the_permalink(); ?>">See It</a>
+		</div>
+
+	</div>
 
 <? endif; ?>
 
@@ -65,138 +74,44 @@
 
 <!-- begin all latest posts (except chosen as home post) -->
 
-<section class="block-1">
-
+<section class="container__posts">
+	
 	<?php if ( $the_query_all_posts->have_posts() ) : ?>
-
-		<?php $counter = 0; ?>
 
 		<?php while ( $the_query_all_posts->have_posts() ) : $the_query_all_posts->the_post(); ?>
 			
-			<?php 
-				$postType = get_post_type_object(get_post_type());
-			?>
+			<?php $postType = get_post_type_object(get_post_type()); ?>
 
-			<?php if ($counter % 2 === 0) : ?>
+			<article class="home__post">
 
-				<article class="row home-post ltr">
-					<div class="medium-7 medium-push-5 columns">
-						<div class="post-meta">
-							<span class="post-meta-category">
-								<a href="/<?= strtolower(str_replace(" ", "-", $postType->labels->name)); ?>"><?= $postType->labels->name; ?></a>
-							</span>
-							<span class="post-meta-date"><?php echo get_the_date('M j, Y'); ?></span>
-							<!-- <span class="post-meta-comments"><?php comments_number( '0', '1', '%' ); ?></span> -->
-						</div>
-						<a href="<?php the_permalink(); ?>" class="post-title"><h2><?php the_title(); ?></h2></a>
-						<div class="post-excerpt">
-							<?php the_excerpt(); ?>
-						</div>
-						<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
-					</div>
-					<div class="medium-5 medium-pull-7 columns">
+				<!-- <div class="post__metadata"> -->
+					<!-- <span class="post__category"> -->
+						<!-- <a href="/<?= strtolower(str_replace(" ", "-", $postType->labels->name)); ?>"><?= $postType->labels->name; ?></a> -->
+					<!-- </span> -->
+					<div class="post__date"><?php echo get_the_date('M j, Y'); ?></div>
+					<!-- <a href="<?php the_permalink(); ?>" class="post__title"> -->
+					<h2 class="post__title"><?php the_title(); ?></h2>
+					<!-- </a> -->
+					<!-- <span class="post-meta-comments"><?php comments_number( '0', '1', '%' ); ?></span> -->
+					<div class="post__image">
 						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('large'); ?>
+							<?php // the_post_thumbnail('large'); ?>
+							<img src="http://via.placeholder.com/350x150?text=img" alt="" />
 						</a>
 					</div>
-				</article>
-
-			<?php else: ?>
-
-				<article class="row home-post rtl">
-					<div class="medium-7 columns">
-						<div class="post-meta">
-							<!-- <span class="post-meta-comments"><?php comments_number( '0', '1', '%' ); ?></span> -->
-							<span class="post-meta-date"><?php echo get_the_date('M j, Y'); ?></span>
-							<span class="post-meta-category">
-								<a href="/<?= strtolower(str_replace(" ", "-", $postType->labels->name)); ?>"><?= $postType->labels->name; ?></a>
-							</span>
-						</div>
-						<a href="<?php the_permalink(); ?>" class="post-title"><h2><?php the_title(); ?></h2></a>
-						<div class="post-excerpt">
-							<?php the_excerpt(); ?>
-						</div>
-						<a href="<?php the_permalink(); ?>" class="read-more">Read More</a>
+					<div class="post__excerpt">
+						<?php the_excerpt(); ?>
 					</div>
-					<div class="medium-5 columns">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail('large'); ?>
-						</a>
-					</div>
-				</article>
-
-			<?php endif; ?>
-
-			<?php $counter++; ?>
+					<a href="<?php the_permalink(); ?>" class="button post__read__more">See It</a>
+				<!-- </div> -->
+				
+			</article>
 
 		<?php endwhile; ?>
 		
 	<?php else: ?>
 
 		<!-- <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
-
-		<article class="row home-post ltr">
-			<div class="medium-7 medium-push-5 columns">
-				<div class="post-meta">
-					<span class="post-meta-category">
-						<a href="/">category name</a>
-					</span>
-					<span class="post-meta-date"><?= date('M j, Y'); ?></span>
-				</div>
-				<a href="/" class="post-title"><h2>post title</h2></a>
-				<div class="post-excerpt">
-					<p>The post excerpt goes here</p>
-				</div>
-				<a href="/" class="read-more">Read More</a>
-			</div>
-			<div class="medium-5 medium-pull-7 columns">
-				<a href="/">
-					<img src="<?= get_stylesheet_directory_uri(); ?>/dist/icons/logo/DOD-icon.png" alt="destinations on a dash logo" />
-				</a>
-			</div>
-		</article>
-
-		<article class="row home-post rtl">
-			<div class="medium-7 columns">
-				<div class="post-meta">
-					<span class="post-meta-date"><?= date('M j, Y'); ?></span>
-					<span class="post-meta-category">
-						<a href="/">category name</a>
-					</span>
-				</div>
-				<a href="/" class="post-title"><h2>post title</h2></a>
-				<div class="post-excerpt">
-					<p>The post excerpt goes here</p>
-				</div>
-				<a href="/" class="read-more">Read More</a>
-			</div>
-			<div class="medium-5 columns">
-				<a href="/">
-					<img src="<?= get_stylesheet_directory_uri(); ?>/dist/icons/logo/DOD-icon.png" alt="destinations on a dash logo" />
-				</a>
-			</div>
-		</article>
-
-		<article class="row home-post ltr">
-			<div class="medium-7 medium-push-5 columns">
-				<div class="post-meta">
-					<span class="post-meta-category">
-						<a href="/">category name</a>
-					</span>
-					<span class="post-meta-date"><?= date('M j, Y'); ?></span>
-				</div>
-				<a href="/" class="post-title"><h2>post title</h2></a>
-				<div class="post-excerpt">
-					<p>The post excerpt goes here</p>
-				</div>
-				<a href="/" class="read-more">Read More</a>
-			</div>
-			<div class="medium-5 medium-pull-7 columns">
-				<a href="/">
-					<img src="<?= get_stylesheet_directory_uri(); ?>/dist/icons/logo/DOD-icon.png" alt="destinations on a dash logo" />
-				</a>
-			</div>
-		</article>
 
 	<?php endif; ?>
 
