@@ -47,7 +47,7 @@
 				the_post_navigation( array(
 					'prev_text'          => '&lt; Prev',
 					'next_text'          => 'Next &gt;',
-					'in_same_term'       => true,
+					'in_same_term'       => false,
 					'excluded_terms'     => '',
 					'taxonomy'           => 'category',
 					'screen_reader_text' => 'Post Navigation'

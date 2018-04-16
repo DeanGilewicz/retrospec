@@ -31,8 +31,9 @@ domReady( () => {
     	$("#js-owl-carousel-ff").owlCarousel({
 			items: 4,
 			nav: true,
+			navText: ['<span class="carousel__prev">&#x2039;</span>', '<span class="carousel__next">&#x203A;</span>'],
 			lazyLoad: true,
-			// loop: true
+			dots: false
 		});
 	}
 
