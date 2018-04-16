@@ -5,6 +5,11 @@ body.home {
 		margin-bottom: $spacing*2;
 		padding-left: 20px;
 		padding-right: 20px;
+
+		@media (min-width: $medium) {
+			margin-top: $spacing*4;
+			margin-bottom: $spacing*4;
+		}
 		
 		h2,
 		p {
@@ -141,10 +146,12 @@ body.home {
 		flex-basis: 100%;
 		display: flex;
 		flex-direction: column;
+	    justify-content: space-between;
 		margin-top: $spacing*2;
 		margin-bottom: $spacing*2;
 		padding: 1rem;
-		box-shadow: 0px 0px 2px 1px $black;
+		// box-shadow: 0px 0px 2px 1px $black;
+		border: 1px solid $grey_light;
 
 		@media (min-width: $medium) {
 			flex-basis: 48%;
@@ -182,4 +189,5 @@ body.home {
 		background-color: $blue;
 		color: $white;
 	}
+
 }

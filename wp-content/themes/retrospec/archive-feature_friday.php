@@ -22,30 +22,38 @@
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<header class="page-header">
+				<h1 class="page-title">Feature Fridays</h1>
+				<?php
+					// the_archive_title( '<h1 class="page-title">', '</h1>' );
+					// the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+
 			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
-					<h1 class="page-title">Feature Fridays</h1>
-					<?php
-						// the_archive_title( '<h1 class="page-title">', '</h1>' );
-						// the_archive_description( '<div class="taxonomy-description">', '</div>' );
-					?>
-				</header><!-- .page-header -->
+				<div class="container__posts">
 
-				<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
+					<?php while ( have_posts() ) : the_post(); ?>
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					// get_template_part( 'content', get_post_format() );
-					get_template_part( 'content' );
+						<article class="ff__post">
+							<div class="post__date"><?php echo get_the_date('M j, Y'); ?></div>
+							<h2 class="post__title"><?php the_title(); ?></h2>
+							<div class="post__image">
+								<a href="<?php the_permalink(); ?>">
+									<?php // the_post_thumbnail('large'); ?>
+									<img src="http://via.placeholder.com/350x150?text=img" alt="" />
+								</a>
+							</div>
+							<div class="post__excerpt">
+								<?php the_excerpt(); ?>
+							</div>
+							<a href="<?php the_permalink(); ?>" class="button post__read__more">See It</a>
+						</article>
 
-				// End the loop.
-				endwhile; ?>
+					<?php endwhile; ?>
+
+				</div>
 
 				<?php if( show_page_nav() ) : ?>
 					<nav class="container_page_nav">
@@ -61,18 +69,14 @@
 					</nav>
 				<?php endif; ?>
 
-				<?php get_template_part( 'content', 'custom-search-form' ); ?>
+				<?php // get_template_part( 'content', 'custom-search-form' ); ?>
 
 			<?php
-
 			// If no content, include the "No posts found" template.
 			else :
 				get_template_part( 'content', 'none' );
-
 			endif;
 			?>
-
-			</div>
 
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->

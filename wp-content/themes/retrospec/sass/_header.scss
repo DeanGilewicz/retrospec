@@ -115,13 +115,18 @@
     		color: $white;
     		border-bottom: 1px solid $white;
 
+	    	@media screen and (min-width: $medium) {
+				border-bottom: none;
+			}
+
     		&:last-of-type {
     			border-bottom: none;
     		}
 
-	    	@media screen and (min-width: $medium) {
-				border-bottom: none;
-			}
+    		&.current-cat a {
+    			color: $blue;
+    		}
+
 
     	}
 

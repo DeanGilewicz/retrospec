@@ -30,4 +30,14 @@ body.post-type-archive-tribe_events {
 		color: $blue;
 	}
 
+	#tribe-events-content-wrapper {
+		position: relative;
+	}
+
+	.tribe-bar-disabled {
+		position: absolute;
+	    top: 25px;
+	    left: 0;
+	}
+
 }

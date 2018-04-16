@@ -81,7 +81,7 @@
 
 		</div><!-- .entry-content -->
 
-		<footer class="entry-footer table">
+		<!-- <footer class="entry-footer table">
 
 			<div class="post_type table_cell">
 				<i class="genericon genericon-pinned"></i>
@@ -109,9 +109,9 @@
 
 			</div>
 
-			<!-- <?php edit_post_link( __( 'Edit', 'retrospec' ), '<span class="edit-link">', '</span>' ); ?> -->
+			<?php edit_post_link( __( 'Edit', 'retrospec' ), '<span class="edit-link">', '</span>' ); ?>
 		
-		</footer><!-- .entry-footer -->
+		</footer> --><!-- .entry-footer -->
 
 	</div>
 

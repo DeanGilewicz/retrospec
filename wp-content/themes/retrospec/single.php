@@ -14,9 +14,9 @@
 		<main id="main" class="site-main container_main_content" role="main">
 
 			<?php
-				if( function_exists('custom_breadcrumbs') ) {
-					custom_breadcrumbs();
-				}
+				// if( function_exists('custom_breadcrumbs') ) {
+				// 	custom_breadcrumbs();
+				// }
 			?>
 
 			<?php
@@ -39,9 +39,9 @@
 				}
 
 				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+				// if ( comments_open() || get_comments_number() ) :
+				// 	comments_template();
+				// endif;
 
 				// Previous/next post navigation.
 				the_post_navigation( array(

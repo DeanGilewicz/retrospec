@@ -1,4 +1,43 @@
 body.single {
 
+	.entry-header {
+		margin-bottom: $spacing*2;
+	}
+
+	.post__title,
+	.post__date {
+		text-align: center;
+	}
+
+	.post__title .entry-title {
+		margin-bottom: 0;
+	}
+
+	.container__social .post__social {
+
+		h3 {
+			margin-bottom: 0;
+		}
+
+		a {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
+
+	}
+
+	.post-navigation {
+
+		.screen-reader-text {
+			display: none;
+		}
+
+		.nav-links {
+			display: flex;
+    		justify-content: space-between;
+		}
+
+	}
+
 
 }

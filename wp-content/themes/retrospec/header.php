@@ -74,10 +74,10 @@
 						<li class="<?php if( is_page('about-retrospec') ) { echo 'current-cat'; } ?>">
 			                <a href="/about-retrospec" class="">about</a>
 			            </li>
-			            <li class="<?php if( is_page('feature-fridays') ) { echo 'current-cat'; } ?>">
+			            <li class="<?php if( get_post_type() === 'feature_friday' ) { echo 'current-cat'; } ?>">
 			                <a href="/feature-fridays" class="">feature fridays</a>
 			            </li>
-			            <li class="<?php if( is_page('events') ) { echo 'current-cat'; } ?>">
+			            <li class="<?php if( $_SERVER['REQUEST_URI'] === '/events/' ) { echo 'current-cat'; } ?>">
 			                <a href="/events" class="">events</a>
 			            </li>
 			            <!-- <li class="<?php if( is_page('shop') ) { echo 'current-cat'; } ?>">
