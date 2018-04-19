@@ -16,6 +16,11 @@ body {
 	@media (min-width: $medium) {
 		font-size: $base_font_size*1.2;
 	}
+
+	&.no__overflow {
+		overflow: hidden;
+	}
+
 }
 
 ol,

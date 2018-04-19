@@ -65,9 +65,10 @@
 				<nav class="nav__main">
 					<ul class="nav__mobile">
 						<li class="nav__label">Menu</li>
-						<li class="nav__trigger">Go</li>
+						<li class="nav__trigger">G</li>
 					</ul>
 					<ul class="nav__items">
+						<li class="mobile__close">X</li>
 						<li class="<?php if( is_home() ) { echo 'current-cat'; } ?>">
 			                <a href="/">home</a>
 			            </li>
@@ -102,3 +103,5 @@
 			<!-- </div> -->
 
 			<div id="page" class="hfeed site page__wrapper"><!-- page wrapper -->
+
+				<div class="scroll__arrow">UP</div>
