@@ -190,4 +190,25 @@ body.home {
 		color: $white;
 	}
 
+	.all__post__navigation {
+		text-align: center;
+
+		a {
+			display: inline-block;
+			margin-top: $spacing;
+			margin-bottom: $spacing;
+			padding: 8px 14px;
+			font-size: $base_font_size*0.8;
+			text-transform: uppercase;
+			background: $black;
+			color: $white;
+
+			@media (min-width: $medium) {
+				font-size: $base_font_size;
+			}
+
+		}
+
+	}
+
 }

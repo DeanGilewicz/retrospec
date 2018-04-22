@@ -12,10 +12,11 @@
 	// begin all latest posts section (not in featured tag)
 	$argsAllPosts = array(
 		'post_type' => array('post'),
-		'category__not_in' => '344',
+		// 'category__not_in' => '344',
 		'tag__not_in' => '2',
 		'posts_per_page' => '6',
-		'orderby' => 'date'
+		'orderby' => 'date',
+		'paged' => get_query_var( 'paged' )
 	);
 	$the_query_all_posts = new WP_Query( $argsAllPosts );
 	// end all latest posts section
@@ -120,6 +121,12 @@
 </section>
 
 <!-- end all latest posts -->
+
+<!--  Previous/next post nav link navigation -->
+<nav class="all__post__navigation">
+    <?php previous_posts_link('See Newer Stuff') ?>
+    <?php next_posts_link('See Older Stuff') ?>
+</nav>
 
 <?php // get_sidebar(); ?>
 
