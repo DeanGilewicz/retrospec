@@ -15,6 +15,19 @@
  * @subpackage retrospec
  * @since retrospec 1.0
  */
+
+	// begin all latest feature friday posts - custom limit
+	// $argsFfPosts = array(
+	// 	'post_type' => array('feature_friday'),
+	// 	// 'category__not_in' => '344',
+	// 	// 'tag__not_in' => '2',
+	// 	'posts_per_page' => '6',
+	// 	'orderby' => 'date',
+	// 	'paged' => get_query_var( 'paged' )
+	// );
+	// $the_query_ff_posts = new WP_Query( $argsFfPosts );
+	// end all latest posts section
+
 ?>
 
 <?php get_header(); ?>
@@ -56,18 +69,25 @@
 				</div>
 
 				<?php if( show_page_nav() ) : ?>
-					<nav class="container_page_nav">
-						<div class="pagination_loop">
+					<!--  Previous/next post nav link navigation -->
+					<nav class="all__feature__friday__navigation">
+					    <?php previous_posts_link('Newer Feature Fridays') ?>
+					    <?php next_posts_link('Older Feature Fridays') ?>
+					</nav>
+					<!-- <nav class="container_page_nav"> -->
+						<!-- <div class="pagination_loop"> -->
 							<?php 
 								// Previous/next page navigation. 
-								the_posts_pagination( array(
-									'prev_text' => __( 'Prev', 'retrospec' ),
-									'next_text' => __( 'Next', 'retrospec' )
-								) );
+								// the_posts_pagination( array(
+								// 	'prev_text' => __( 'Prev', 'retrospec' ),
+								// 	'next_text' => __( 'Next', 'retrospec' )
+								// ) );
 							?>
-						</div>
-					</nav>
+						<!-- </div> -->
+					<!-- </nav> -->
 				<?php endif; ?>
+
+				<?php wp_reset_postdata(); ?>
 
 				<?php // get_template_part( 'content', 'custom-search-form' ); ?>
 

@@ -117,6 +117,18 @@ textarea {
 		background-color: $black;
 		color: $white;
 	}
+
+	&.button--link {
+		padding: 8px 14px;
+		background-color: $black;
+		color: $white;
+
+		@media (min-width: $medium) {
+			font-size: $base_font_size;
+		}
+
+	}
+
 }
 
 

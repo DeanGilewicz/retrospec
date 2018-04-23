@@ -416,6 +416,45 @@ function retrospec_add_slug_body_class( $classes ) {
 add_filter( 'body_class', 'retrospec_add_slug_body_class' );
 
 
+/* Add css class to older post and newer post used in the previous_posts_link() and next_posts_link() functions */
+function newer_posts() {
+    return 'class="button button--link"';
+}
+function older_posts() {
+    return 'class="button button--link"';
+}
+
+add_filter('previous_posts_link_attributes', 'older_posts');
+add_filter('next_posts_link_attributes', 'newer_posts');
+ 
+/* Add css class to older post and newer post used in the_post_navigation functions */
+
+function post_link_attributes($output) {
+    $code = 'class="button button--link"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+
+add_filter('next_post_link', 'post_link_attributes');
+add_filter('previous_post_link', 'post_link_attributes');
+
+
+function custom_wp_query_posts( $query ) {
+    if ( !is_admin() && $query->is_main_query() && $query->is_home() ) {
+        $query->set('post_type', array('post'));
+		$query->set('tag__not_in', '2'); // not a "featured post"
+		$query->set('posts_per_page', '6');
+		$query->set('orderby', 'date');
+    }
+    if ( !is_admin() && $query->is_main_query() && is_post_type_archive('feature_friday') ) {
+        $query->set('post_type', array('feature_friday'));
+		$query->set('posts_per_page', '6');
+		$query->set('orderby', 'date');
+    }
+}
+
+add_action( 'pre_get_posts', 'custom_wp_query_posts' );
+
+
 /**
  * Converts a HEX value to RGB.
  *

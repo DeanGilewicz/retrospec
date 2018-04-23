@@ -44,15 +44,26 @@
 				// endif;
 
 				// Previous/next post navigation.
-				the_post_navigation( array(
-					'prev_text'          => '&lt; Prev',
-					'next_text'          => 'Next &gt;',
-					'in_same_term'       => false,
-					'excluded_terms'     => '',
-					'taxonomy'           => 'category',
-					'screen_reader_text' => 'Post Navigation'
-				) );
+				// the_post_navigation( array(
+				// 	'prev_text'          => '&lt; Prev',
+				// 	'next_text'          => 'Next &gt;',
+				// 	'in_same_term'       => false,
+				// 	'excluded_terms'     => '',
+				// 	'taxonomy'           => 'category',
+				// 	'screen_reader_text' => 'Post Navigation'
+				// ) );
+				?>
+				
+				<?php //if( show_page_nav() ) : ?>
+					<nav class="post__navigation">
+						<?php previous_post_link( '%link', '&lt; Prev' ); ?> 
+						<!-- link to all posts -->
+						<a href="/category/articles" class="button button--link">See All</a>
+						<?php next_post_link( '%link', 'Next &gt;' ); ?>
+					</nav>
+				<?php //endif; ?>
 
+			<?php
 			// End the loop.
 			endwhile;
 			?>

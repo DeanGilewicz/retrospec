@@ -26,17 +26,24 @@ body.single {
 
 	}
 
-	.post-navigation {
+	// .post-navigation {
 
-		.screen-reader-text {
-			display: none;
-		}
+	// 	.screen-reader-text {
+	// 		display: none;
+	// 	}
 
-		.nav-links {
-			display: flex;
-    		justify-content: space-between;
-		}
+	// 	.nav-links {
+	// 		display: flex;
+ //    		justify-content: space-between;
+	// 	}
 
+	// }
+
+	.post__navigation {
+		display: flex;
+		justify-content: space-between;
+		padding-top: $spacing*2;
+		padding-bottom: $spacing*2;
 	}
 
 

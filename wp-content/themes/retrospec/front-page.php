@@ -10,16 +10,26 @@
 	// end set up
 	
 	// begin all latest posts section (not in featured tag)
-	$argsAllPosts = array(
-		'post_type' => array('post'),
-		// 'category__not_in' => '344',
-		'tag__not_in' => '2',
-		'posts_per_page' => '6',
-		'orderby' => 'date',
-		'paged' => get_query_var( 'paged' )
-	);
-	$the_query_all_posts = new WP_Query( $argsAllPosts );
+	// $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+	// $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+	// $argsAllPosts = array(
+	// 	'post_type' => array('post'),
+	// 	// 'category__not_in' => '344',
+	// 	'tag__not_in' => '2',
+	// 	'posts_per_page' => '6',
+	// 	'orderby' => 'date',
+	// 	// 'paged' => $paged
+	// );
+	// $the_query_all_posts = new WP_Query( $argsAllPosts );
+	// echo '<pre>';
+	// print_r($the_query_all_posts);
+	// exit;
 	// end all latest posts section
+
+	// Pagination fix - use the_query_all_posts instead of original WP query
+	// $temp_query = $wp_query;
+	// $wp_query   = NULL;
+	// $wp_query   = $the_query_all_posts;	
 ?>
 
 <?php get_header(); ?>
@@ -52,9 +62,9 @@
 
 		<?php endwhile; ?>
 
-	</div>
+		<?php wp_reset_postdata(); ?>
 
-	<?php wp_reset_postdata(); ?>
+	</div>
 
 <?php else : ?>
 
@@ -77,9 +87,9 @@
 
 <section class="container__posts">
 	
-	<?php if ( $the_query_all_posts->have_posts() ) : ?>
+	<?php if ( have_posts() ) : ?>
 
-		<?php while ( $the_query_all_posts->have_posts() ) : $the_query_all_posts->the_post(); ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 			
 			<?php $postType = get_post_type_object(get_post_type()); ?>
 
@@ -109,24 +119,31 @@
 			</article>
 
 		<?php endwhile; ?>
-		
+
+		<!--  Previous/next post nav link navigation -->
+		<nav class="all__post__navigation">
+		    <?php previous_posts_link('Newer Articles') ?>
+		    <?php next_posts_link('Older Articles') ?>
+		</nav>
+
+		<?php wp_reset_postdata(); ?>
+
 	<?php else: ?>
 
 		<!-- <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p> -->
 
 	<?php endif; ?>
 
-	<?php wp_reset_postdata(); ?>
+	<?php 
+		// Pagination fix - reset WP query
+		// $wp_query = NULL;
+		// $wp_query = $temp_query;
+	?>
 
 </section>
 
 <!-- end all latest posts -->
-
-<!--  Previous/next post nav link navigation -->
-<nav class="all__post__navigation">
-    <?php previous_posts_link('See Newer Stuff') ?>
-    <?php next_posts_link('See Older Stuff') ?>
-</nav>
+<!-- <pre><?php var_dump( $wp_query->posts ); ?></pre> -->
 
 <?php // get_sidebar(); ?>
 
