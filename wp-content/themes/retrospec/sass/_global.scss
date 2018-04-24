@@ -129,6 +129,11 @@ textarea {
 
 	}
 
+	&.post__read__more {
+		background-color: $blue;
+		color: $white;
+	}
+
 }
 
 
