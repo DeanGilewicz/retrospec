@@ -70,9 +70,10 @@
 
 			</footer><!-- .site-footer -->
 
-			<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/jquerySlim.min.js"></script>
-			
-			<?php if( is_home() || get_post_type() === 'feature_friday' ): ?>
+			<?php if( get_post_type() !== 'tribe_events' ) : ?>
+				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/jquerySlim.min.js"></script>
+			<?php endif; ?>
+			<?php if( is_home() || get_post_type() === 'feature_friday' ) : ?>
 				<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/js/vendor/owl.carousel.min.js"></script>
 			<?php endif; ?>
 

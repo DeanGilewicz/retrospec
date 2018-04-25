@@ -445,11 +445,11 @@ function custom_wp_query_posts( $query ) {
 		$query->set('posts_per_page', '6');
 		$query->set('orderby', 'date');
     }
-    if ( !is_admin() && $query->is_main_query() && is_post_type_archive('feature_friday') ) {
-        $query->set('post_type', array('feature_friday'));
-		$query->set('posts_per_page', '6');
-		$query->set('orderby', 'date');
-    }
+  //   if ( !is_admin() && $query->is_main_query() && is_post_type_archive('feature_friday') ) {
+  //       $query->set('post_type', array('feature_friday'));
+		// $query->set('posts_per_page', '6');
+		// $query->set('orderby', 'date');
+  //   }
 }
 
 add_action( 'pre_get_posts', 'custom_wp_query_posts' );

@@ -58,7 +58,11 @@
 					<nav class="post__navigation">
 						<?php previous_post_link( '%link', '&lt; Prev' ); ?> 
 						<!-- link to all posts -->
-						<a href="/category/articles" class="button button--link">See All</a>
+						<?php if( get_post_type() === 'feature_friday' ): ?>
+							<a href="/feature-fridays" class="button button--link">See All</a>
+						<?php else: ?>
+							<a href="/category/articles" class="button button--link">See All</a>
+						<?php endif; ?>
 						<?php next_post_link( '%link', 'Next &gt;' ); ?>
 					</nav>
 				<?php //endif; ?>

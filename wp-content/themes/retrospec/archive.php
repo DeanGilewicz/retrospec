@@ -22,31 +22,60 @@
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<header class="page-header">
+				<h1 class="page-title">Articles</h1>
+			</header>
+
 			<?php if ( have_posts() ) : ?>
 
-				<header class="page-header">
+				<!-- <header class="page-header">
 					<?php
 						the_archive_title( '<h1 class="page-title">', '</h1>' );
 						the_archive_description( '<div class="taxonomy-description">', '</div>' );
 					?>
-				</header><!-- .page-header -->
+				</header> --><!-- .page-header -->
 
-				<?php
-				// Start the Loop.
-				while ( have_posts() ) : the_post();
+				<div class="container__posts">
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+					<?php
+					// Start the Loop.
+					while ( have_posts() ) : the_post();
 
-				// End the loop.
-				endwhile; ?>
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						// get_template_part( 'content', get_post_format() );
+					?>
+						<article class="article__post">
+							<div class="post__date"><?php echo get_the_date('M j, Y'); ?></div>
+							<h2 class="post__title"><?php the_title(); ?></h2>
+							<div class="post__image">
+								<a href="<?php the_permalink(); ?>">
+									<?php // the_post_thumbnail('large'); ?>
+									<img src="http://via.placeholder.com/350x150?text=img" alt="" />
+								</a>
+							</div>
+							<div class="post__excerpt">
+								<?php the_excerpt(); ?>
+							</div>
+							<a href="<?php the_permalink(); ?>" class="button post__read__more">See It</a>
+						</article>
+
+					<?php
+					// End the loop.
+					endwhile; ?>
+
+				</div>
 
 				<?php if( show_page_nav() ) : ?>
-					<nav class="container_page_nav">
+					<!--  Previous/next post nav link navigation -->
+					<nav class="all__articles__navigation">
+					    <?php previous_posts_link('Newer Articles') ?>
+					    <?php next_posts_link('Older Articles') ?>
+					</nav>
+					<!-- <nav class="container_page_nav">
 						<div class="pagination_loop">
 							<?php 
 								// Previous/next page navigation. 
@@ -56,10 +85,12 @@
 								) );
 							?>
 						</div>
-					</nav>
+					</nav> -->
 				<?php endif; ?>
 
-				<?php get_template_part( 'content', 'custom-search-form' ); ?>
+				<?php wp_reset_postdata(); ?>
+
+				<?php // get_template_part( 'content', 'custom-search-form' ); ?>
 
 			<?php
 
@@ -69,8 +100,6 @@
 
 			endif;
 			?>
-
-			</div>
 
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->

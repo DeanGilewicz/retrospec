@@ -13,20 +13,20 @@ domReady( () => {
 	const closeNavTrigger = document.querySelector('.mobile__close');
 	const navItems = document.querySelector('.nav__items');
 
-	const $win = $(window);
-	const $winHeight = $($win).height();
-	const $scrollArrow = $('.scroll__arrow');
+	const $win = jQuery(window);
+	const $winHeight = jQuery($win).height();
+	const $scrollArrow = jQuery('.scroll__arrow');
 	// const $mobileNavTriggerContainer = $('.nav__mobile');
 	// const $offsetTopMobileNavTriggerContainer = $($mobileNavTriggerContainer).offset().top;
 	
 	const updateScrollArrow = function() {
-		if( $($win).scrollTop() >= $winHeight * 1.5 ) {
-			if( !$($scrollArrow).hasClass('active') ) {
-				$($scrollArrow).addClass('active');
+		if( jQuery($win).scrollTop() >= $winHeight * 1.5 ) {
+			if( !jQuery($scrollArrow).hasClass('active') ) {
+				jQuery($scrollArrow).addClass('active');
 			}
 		} else {
-			if( $($scrollArrow).hasClass('active') ) {
-				$($scrollArrow).removeClass('active');
+			if( jQuery($scrollArrow).hasClass('active') ) {
+				jQuery($scrollArrow).removeClass('active');
 			}
 		}
 	};
@@ -35,7 +35,7 @@ domReady( () => {
 	updateScrollArrow();
 
 	// run when browser is scrolled
-	$($win).on('scroll', updateScrollArrow);
+	jQuery($win).on('scroll', updateScrollArrow);
 
 
 	// const isMobileViewport = function() {
@@ -101,7 +101,7 @@ domReady( () => {
 
 	if( document.body.classList.contains('home') ) {
     	// JQuery available
-    	$("#js-owl-carousel").owlCarousel({
+    	jQuery("#js-owl-carousel").owlCarousel({
 			items: 1,
 			nav: true,
 			navText: ['<span class="carousel__prev">&#x2039;</span>', '<span class="carousel__next">&#x203A;</span>']
@@ -110,7 +110,7 @@ domReady( () => {
 
 	if( document.body.classList.contains('single-feature_friday') ) {
 		// JQuery available
-    	$("#js-owl-carousel-ff").owlCarousel({
+    	jQuery("#js-owl-carousel-ff").owlCarousel({
 			items: 4,
 			nav: true,
 			navText: ['<span class="carousel__prev">&#x2039;</span>', '<span class="carousel__next">&#x203A;</span>'],
