@@ -15,17 +15,17 @@
 
 			<div class="container_main_content">
 
-				<section class="error-404 not-found">
+				<section class="error-404">
 
 					<header class="page-header">
-						<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'retrospec' ); ?></h1>
+						<h1 class="page-title"><?php _e( 'You must be lost! Nothing here to see here.', 'retrospec' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<div class="page-content">
 						
-						<div class="container_not_found_content">
+						<div class="container__not__found__content">
 							<!-- <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'retrospec' ); ?></p> -->
-							<p>It looks like nothing was found at this location. Maybe try a search?</p>
+							<p>Maybe try a search?</p>
 						</div>
 
 						<?php // get_search_form(); ?>

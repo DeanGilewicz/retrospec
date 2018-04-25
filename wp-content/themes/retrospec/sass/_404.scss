@@ -1,4 +1,16 @@
-body.four-0-four {
+body.error404 {
  
+	.page-header,
+	.page-content {
+		text-align: center;
+	}
+
+	.container__not__found__content {
+
+		p {
+			font-size: $base_font_size*1.6
+		}
+
+	}
 
 }
