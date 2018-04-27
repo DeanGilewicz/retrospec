@@ -44,31 +44,48 @@
 				<div class="container__top__banner">
 
 					<div class="social">
-						<img src="http://via.placeholder.com/40x40?text=F" alt="facebook logo" class="social__icon" />
-						<img src="http://via.placeholder.com/40x40?text=I" alt="instagram logo" class="social__icon" />
-						<img src="http://via.placeholder.com/40x40?text=T" alt="twitter logo" class="social__icon" />
+						<a href="#" class="social__icon">
+							<img src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/icons/logo-facebook.svg" alt="facebook logo" />
+						</a>
+						<a href="#" class="social__icon">
+							<img src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/icons/logo-instagram.svg" alt="instagram logo" />
+						</a>
+						<a href="#" class="social__icon">
+							<img src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/icons/logo-twitter.svg" alt="twitter logo" />
+						</a>
 					</div>
 
 					<form role="search" method="get" class="search__form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<input type="search" class="form__input" placeholder="<?php echo esc_attr_x( 'Search &hellip;', 'placeholder', 'retrospec' ); ?>" value="<?php echo get_search_query(); ?>" name="s" title="<?php echo esc_attr_x( 'Search for:', 'label', 'retrospec' ); ?>" />
-						<input type="submit" class="form__submit" value="S" />
+						<input type="submit" class="form__submit" value="" />
 					</form>
 
 				</div>
 
 				<div class="logo__main">
 					<a href="/">
-						<img src="http://via.placeholder.com/350x150?text=logo" alt="retrospec logo" />
+						<img srcset="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-320.jpg 320w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-480.jpg 480w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-640.jpg 640w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-768.jpg 768w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-1024.jpg 1024w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-1280.jpg 1280w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-1440.jpg 1440w,
+								<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-1920.jpg 1920w"
+							 src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/logos/logo-640.jpg"
+							 alt="Restrospec Logo" />
 					</a>
 				</div>
 
 				<nav class="nav__main">
 					<ul class="nav__mobile">
 						<li class="nav__label">Menu</li>
-						<li class="nav__trigger">G</li>
+						<li class="nav__trigger">
+							<img src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/icons/icon-menu.svg" alt="menu icon">
+						</li>
 					</ul>
 					<ul class="nav__items">
-						<li class="mobile__close">X</li>
+						<li class="mobile__close"></li>
 						<li class="<?php if( is_home() ) { echo 'current-cat'; } ?>">
 			                <a href="/">home</a>
 			            </li>
@@ -104,4 +121,6 @@
 
 			<div id="page" class="hfeed site page__wrapper"><!-- page wrapper -->
 
-				<div class="scroll__arrow">UP</div>
+				<div class="scroll__arrow">
+					<img src="<?= get_stylesheet_directory_uri(); ?>/dist/imgs/icons/icon-arrow.svg" alt="arrow icon" />
+				</div>

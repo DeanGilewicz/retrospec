@@ -6,7 +6,7 @@
 .container__top__banner {
 	display: flex;
     justify-content: space-between;
-    padding: $spacing $spacing*1.5;
+    padding: $spacing*1.4 $spacing*1.5 $spacing;
 	background-color: $black;
 
     @media screen and (min-width: $medium) {
@@ -24,10 +24,27 @@
 	}
 
 	.social__icon {
+		display: inline-block;
 		width: 30px;
 
 		@media screen and (min-width: $medium) {
 			width: 40px;
+		}
+
+		img {
+			width: 100%;
+			border-radius: 50%;
+		}
+
+	}
+
+	.social__icon:nth-child(2) {
+		margin-left: 2px;
+		margin-right: 2px;
+
+		@media screen and (min-width: $medium) {
+			margin-left: 8px;
+			margin-right: 8px;
 		}
 
 	}
@@ -49,16 +66,35 @@
 		width: 140px;
 		height: 100%;
 		padding: $spacing*0.5 $spacing;
+
+		@media screen and (min-width: $medium) {
+			width: 180px;
+		}
+
+		@media screen and (min-width: $large) {
+			width: 260px;
+		}
+
+		@media screen and (min-width: $xLarge) {
+			width: 320px;
+		}
+
 	}
 
 	.form__submit {
 		width: 30px;
 		padding: $spacing*0.5;
 		background-color: $black;
+		background-image: url('../imgs/icons/icon-search.svg');
+		background-repeat: no-repeat;
+		background-size: 18px 18px;
+		background-position: center center;
 		color: $white;
+		cursor: pointer;
 
 		@media screen and (min-width: $medium) {
 			width: 40px;
+			background-size: 24px 24px;
 		}
 
 	}
@@ -68,8 +104,8 @@
 .nav__main {
 	// position: relative;
 	padding: $spacing $spacing*1.5;
-    border-top: 1px solid $black;
-    border-bottom: 1px solid $black;
+    border-top: 3px solid $black;
+    border-bottom: 3px solid $black;
 
 	> ul {
 		list-style-type: none;
@@ -80,24 +116,36 @@
 	}
 
 	.nav__mobile {
-		background: $white;
+		align-items: center;
+		background-color: $white;
 		
-		&.fixed {
-			position: fixed;
-			width: 100%;
-			top: 0;
-			left: 0;
-			right: 0;
-			z-index: 100;
-			padding: 10px 15px;
-			border-top: 1px solid #000;
-			border-bottom: 1px solid #000;
-	    }
+		// &.fixed {
+		// 	position: fixed;
+		// 	width: 100%;
+		// 	top: 0;
+		// 	left: 0;
+		// 	right: 0;
+		// 	z-index: 100;
+		// 	padding: 10px 15px;
+		// 	border-top: 1px solid #000;
+		// 	border-bottom: 1px solid #000;
+	 //    }
 
 		@media screen and (min-width: $medium) {
 			display: none;
 		}
 
+	}
+
+	.nav__mobile .nav__label {
+		text-transform: uppercase;
+		font-weight: 900;
+		line-height: 1;
+	}
+
+	.nav__mobile .nav__trigger img {
+		display: block;
+		width: 30px;
 	}
 
 	.nav__items {
@@ -135,9 +183,10 @@
 		}
 
     	li {
-    		padding: $spacing*1.6 $spacing*2;
-    		color: $white;
     		border-bottom: 1px solid $white;
+    		padding: $spacing*1.6 $spacing*2;
+    		font-weight: 900;
+    		color: $white;
 
 	    	@media screen and (min-width: $medium) {
 				border-bottom: none;
@@ -161,11 +210,26 @@
     			color: $blue;
     		}
 
+    		a {
+    			color: $white;
+
+    			@media screen and (min-width: $medium) {
+					color: $black;
+				}
+
+    		}
+
     	}
 
     	.mobile__close {
     		border: none;
     		align-self: flex-end;
+    		margin: 20px 10px;
+    		background-image: url('../imgs/icons/icon-close.svg');
+    		background-repeat: no-repeat;
+    		background-size: 24px 24px;
+    		background-position: center center;
+    		cursor: pointer;
 
     		@media screen and (min-width: $medium) {
 				display: none;
@@ -178,9 +242,12 @@
 }
 
 .logo__main {
-	// height: 150px;
-	padding: $spacing $spacing*1.5;
+	padding: $spacing*3.4 $spacing*1.5 $spacing*3;
 	text-align: center;
+
+	@media screen and (min-width: $medium) {
+		padding: $spacing*4.4 $spacing*1.5 $spacing*4;
+	}
 
 	a {
 		display: inline-block;
@@ -188,24 +255,12 @@
 
 	img {
     	width: 100%;
-	    max-width: 300px;
-	}
+	    max-width: 160px;
 
-}
+	    @media screen and (min-width: $medium) {
+	    	max-width: 200px;
+	    }
 
-.scroll__arrow {
-	position: fixed;
-	bottom: 10px;
-	right: 15px;
-	z-index: 50;
-	border-radius: 50%;
-	padding: 10px;
-	background: red;
-	color: white;
-	opacity: 0;
-
-	&.active {
-		opacity: 1;
 	}
 
 }

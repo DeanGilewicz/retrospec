@@ -20,7 +20,7 @@ domReady( () => {
 	// const $offsetTopMobileNavTriggerContainer = $($mobileNavTriggerContainer).offset().top;
 	
 	const updateScrollArrow = function() {
-		if( jQuery($win).scrollTop() >= $winHeight * 1.5 ) {
+		if( jQuery($win).scrollTop() >= $winHeight * 1.2 ) {
 			if( !jQuery($scrollArrow).hasClass('active') ) {
 				jQuery($scrollArrow).addClass('active');
 			}

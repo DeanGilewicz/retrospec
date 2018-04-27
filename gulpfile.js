@@ -62,6 +62,13 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('wp-content/themes/retrospec/dist/css'));
 });
 
+// IMAGES
+
+// move imgs into dist
+gulp.task('imgs', function() {
+	return gulp.src('wp-content/themes/retrospec/imgs/**')
+		.pipe(gulp.dest('wp-content/themes/retrospec/dist/imgs'));
+});
 
 // COMMANDS
 
