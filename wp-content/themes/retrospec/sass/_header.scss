@@ -63,6 +63,7 @@
 	}
 
 	.form__input {
+		border-radius: 0;
 		width: 140px;
 		height: 100%;
 		padding: $spacing*0.5 $spacing;
@@ -156,7 +157,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 100;
+		z-index: 110;
 		width: 100%;
 		height: 100%;
 		max-height: 0;

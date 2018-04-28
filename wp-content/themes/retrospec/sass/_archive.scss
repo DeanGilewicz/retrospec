@@ -145,3 +145,20 @@ body.post-type-archive-feature_friday {
 	}
 
 }
+
+body.post-type-archive-tribe_events {
+
+	.tribe-bar-date-filter,
+	input[name="tribe-bar-date"] {
+		width: 100% !important;
+	}
+
+	.tribe-bar-disabled {
+		position: relative !important;
+		z-index: 5 !important;
+
+		@media (min-width: $large) {
+			position: absolute !important;
+		}
+	}
+}
