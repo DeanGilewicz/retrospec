@@ -63,7 +63,10 @@
 	}
 
 	.form__input {
+		appearance: none;
+		outline: none;
 		border-radius: 0;
+		border: 1px solid $white;
 		width: 140px;
 		height: 100%;
 		padding: $spacing*0.5 $spacing;
