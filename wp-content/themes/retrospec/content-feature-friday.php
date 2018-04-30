@@ -108,16 +108,28 @@
 
 						<?php if( $imageNum <= 4 ) : ?>
 							<div class="slide-<?= $imageNum; ?>">
-								<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt'] ?>" />
+								<a href="#" class="js-lightbox-trigger"><img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt'] ?>" /></a>
 							</div>
 						<?php else: ?>
 							<div class="slide-<?= $imageNum; ?>">
-								<img class="owl-lazy" data-src="<?php echo $image['sizes']['thumbnail']; ?>" data-src-retina="<?php echo $image['sizes']['thumbnail']; ?>" alt="">
+								<a href="#" class="js-lightbox-trigger"><img class="owl-lazy" data-src="<?php echo $image['sizes']['thumbnail']; ?>" data-src-retina="<?php echo $image['sizes']['thumbnail']; ?>" alt=""></a>
 							</div>
 						<?php endif; ?>
 
 					<?php endwhile; ?>
 
+				</div>
+
+				<div class="lightbox__error">
+					Oh no the images couldn't be loaded! Try one more time...
+				</div>
+
+				<div class="container__owl__carousel">
+					<div class="loading__indicator">LOADING ...</div>
+					<div class="owl-carousel owl-carousel--lightbox" id="js-owl-carousel-lightbox">
+						<!-- JS generated -->
+					</div>
+					<div class="button js-lightbox-close">CLOSE</div>
 				</div>
 
 			<?php endif; ?>			

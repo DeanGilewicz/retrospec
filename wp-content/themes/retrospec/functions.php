@@ -1172,6 +1172,25 @@ endif;
 remove_filter( 'the_content', 'wpautop' );
 
 
+/* REST API LOCKDOWN */
+add_filter( 'rest_authentication_errors', 'gc_filter_incoming_connections' );
+
+function gc_filter_incoming_connections( $errors ){
+
+    $allowed_server_names = array('retrospec.localhost', 'staging.thecodelog.com'); // url that you want to access your WP REST API
+    // print_r($_SERVER);
+    // exit;
+    $request_server_name = $_SERVER['SERVER_NAME'];
+
+    if( ! in_array( $request_server_name, $allowed_server_names ) )
+        return new WP_Error( 'forbidden_access', 'Access denied', array( 'status' => 403 ) );
+
+    return $errors;
+
+}
+
+
+
 /* Social Share
 if ( ! function_exists( 'retrospec_social_sharing_buttons' ) ) :
 

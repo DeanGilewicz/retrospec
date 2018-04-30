@@ -64,6 +64,7 @@
 		        'public' => true,
 		        'menu_position' => 6,
 				'rewrite' => array('slug' => 'feature-fridays'),
+		        'show_in_rest' => true,
 		        'supports' => array(
 		            'title',
 		            'editor',
